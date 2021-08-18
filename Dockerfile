@@ -7,6 +7,12 @@ ENV PYTHONUNBUFFERED 1
 # Set work directory
 WORKDIR /app
 
+# install system dependencies
+RUN apt-get update \
+  && apt-get -y install netcat gcc postgresql \
+  && apt-get clean
+
+
 # install dependencies
 RUN pip install --upgrade pip
 COPY ./requirements.txt /requirements.txt
