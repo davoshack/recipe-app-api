@@ -21,6 +21,10 @@ RUN pip install -r /requirements-dev.txt
 
 
 COPY . /app/
+RUN mkdir -p /vol/web/media
+RUN mkdir -p /vol/web/static
+
+RUN chmod +x /vol/web
 
 
 
